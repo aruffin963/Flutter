@@ -1,5 +1,4 @@
-import 'package:express_wash/main.dart';
-import 'package:express_wash/home.dart';
+import 'package:express_wash/screen_color.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
@@ -17,11 +16,11 @@ class _SplashState extends State<Splash> {
   }
 
   _navigatetohome() async {
-    await Future.delayed(Duration(milliseconds: 1500), () {});
+    await Future.delayed(const Duration(milliseconds: 1500), () {});
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-            builder: (context) => const MyHomePage(title: 'Express Wash')));
+            builder: (context) => const NextHomepage()));
   }
 
   @override

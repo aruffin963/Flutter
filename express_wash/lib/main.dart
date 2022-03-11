@@ -1,6 +1,5 @@
-import 'package:express_wash/Splash_screen.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:express_wash/home.dart';
+import 'package:express_wash/screen_color.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,33 +9,38 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-       home: AnimatedSplashScreen(splash:
-       Icons.home,
-       duration: 2000,
-       splashTransition: SplashTransition.fadeTransition,
-            backgroundColor: Colors.blue
-       //Center(
-    //         child: Column(
-    //           mainAxisAlignment: MainAxisAlignment.center,
-    //   children: [
-    //     Container(height: 200, width: 100, color: Colors.blue),
-    //     Container(
-    //         child: const Text('Splash Screen',
-    //             style: TextStyle(
-    //               fontSize: 24,
-    //               fontWeight: FontWeight.bold,
-    //             ))),
-    //   ],
-    // )
-    ,nextScreen: const MyHomePage(title: 'Express Wash')),
-    );
-  }
+  Widget build(BuildContext context) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Express Wash',
+        theme: ThemeData(scaffoldBackgroundColor: const Color(0xFFFAFAFA)),
+        home: AnimatedSplashScreen(
+            splash: Center(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    RichText(
+                      text: const TextSpan(
+                        text: 'Express',
+                        style: TextStyle(color: Colors.black, fontSize: 30.0),
+                        children: [
+                          TextSpan(
+                            text: 'Wash',
+                            style: TextStyle(color: Colors.red, fontSize: 30.0),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 300.0,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            duration: 2000,
+            splashTransition: SplashTransition.fadeTransition,
+            backgroundColor: const Color(0xFFFAFAFA),
+            nextScreen: const NextHomepage()),
+      );
 }
