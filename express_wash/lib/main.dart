@@ -15,32 +15,35 @@ class MyApp extends StatelessWidget {
         title: 'Express Wash',
         theme: ThemeData(scaffoldBackgroundColor: const Color(0xFFFAFAFA)),
         home: AnimatedSplashScreen(
-            splash: Center(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    RichText(
-                      text: const TextSpan(
-                        text: 'Express',
-                        style: TextStyle(color: Colors.black, fontSize: 30.0),
-                        children: [
-                          TextSpan(
-                            text: 'Wash',
-                            style: TextStyle(color: Colors.red, fontSize: 30.0),
-                          ),
-                        ],
-                      ),
+          splash: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Image.asset('assets/icons/icon.png',
+                      width: 100, height: 50, fit: BoxFit.cover),
+                  RichText(
+                    text: const TextSpan(
+                      text: 'Express',
+                      style: TextStyle(color: Colors.black, fontSize: 30.0),
+                      children: [
+                        TextSpan(
+                          text: 'Wash',
+                          style: TextStyle(color: Colors.red, fontSize: 30.0),
+                        ),
+                      ],
                     ),
-                    const SizedBox(
-                      height: 300.0,
-                    ),
-                  ],
-                ),
+                  ),
+                  const SizedBox(
+                    height: 300.0,
+                  ),
+                ],
               ),
             ),
-            duration: 2000,
-            splashTransition: SplashTransition.fadeTransition,
-            backgroundColor: const Color(0xFFFAFAFA),
-            nextScreen: const NextHomepage()),
+          ),
+          duration: 1000,
+          splashTransition: SplashTransition.fadeTransition,
+          backgroundColor: const Color(0xFFFAFAFA),
+          nextScreen: const NextHomepage(),
+        ),
       );
 }

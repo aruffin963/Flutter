@@ -15,6 +15,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   animated_splash_screen: ^1.2.0
   introduction_screen: ^3.0.0
+  hexcolor: ^2.0.6
+  otp_text_field: ^1.1.2
+  font_awesome_flutter: ^10.1.0
 
 dev_dependencies:
   flutter_test:
@@ -35,4 +38,9 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/
+    - assets/icons/icon_app.png
+    - assets/icons/icon.png
+    - assets/assist.png
+    - assets/del.png
+    - assets/first.png
+    - assets/deliver.png
